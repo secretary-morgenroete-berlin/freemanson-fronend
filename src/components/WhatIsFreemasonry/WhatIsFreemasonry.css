@@ -1,0 +1,47 @@
+
+/* Headings for this page */
+.freimaurerei-title {
+  font-family: 'Great Vibes', 'Parisienne', cursive;
+  font-size: 2.7rem;
+  color: #654321;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Section for text */
+.freimaurerei-section {
+  background: rgba(250, 248, 236, 0.98);
+  border-radius: 20px;
+  box-shadow: 0 2px 22px rgba(101, 67, 33, 0.09);
+  padding: 2rem 1.2rem;
+  max-width: 80%;
+  margin: 0 auto 2rem auto;
+}
+
+.freimaurerei-text {
+  font-size: 1.22rem;
+  line-height: 1.7;
+  color: #3d2c16;
+  margin-bottom: 1.3rem;
+}
+
+.freimaurerei-img {
+  display: block;
+  margin: 2rem auto 2rem auto;
+  max-width: 220px;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(101,67,33,0.09);
+}
+
+@media (max-width: 600px) {
+  .freimaurerei-title {
+    font-size: 2rem;
+  }
+  .freimaurerei-section {
+    padding: 1.1rem 0.4rem;
+  }
+  .freimaurerei-img {
+    max-width: 100%;
+  }
+}

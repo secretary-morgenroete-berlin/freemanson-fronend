@@ -1,0 +1,17 @@
+.homepage-hero {
+  position: relative;
+  overflow: hidden;
+  transition: background-image 0.7s cubic-bezier(.4,2,.4,1);
+}
+
+.homepage-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(30,40,60, 0.40);
+  z-index: 0;
+}
+
+.homepage-content {
+  z-index: 2;
+  position: relative;
+}
