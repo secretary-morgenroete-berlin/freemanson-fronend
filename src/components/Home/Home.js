@@ -5,8 +5,8 @@ import HomeMessage from "./HomeMessage";
 
 const heroImages = [
   "/bg1.jpg", // Berlin city
-  "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=1350&q=80", // Columns
-  "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=1350&q=80", // Abstract
+  "/2.jpg", // Columns
+  "/5.jpg", // Abstract
 ];
 
 const heroSections = [
