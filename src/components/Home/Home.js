@@ -5,8 +5,8 @@ import HomeMessage from "./HomeMessage";
 
 const heroImages = [
   "/bg1.jpg", // Berlin city
-  "/2.jpg", // Columns
-  "/5.jpg", // Abstract
+  "/2.JPG", // Columns
+  "/5.JPG", // Abstract
 ];
 
 const heroSections = [
