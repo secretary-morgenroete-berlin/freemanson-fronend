@@ -1,0 +1,21 @@
+body {
+  overflow-x:hidden;
+}
+.lodge-cards {
+    border-radius: 2px !important;
+    /* width: 100% !important; */
+}
+.carousel-inner {
+    height: 100%;
+}
+
+.lodge-header {
+    margin-top: 2vh !important;
+}
+
+@media (max-width: 767px) {
+
+    .lodge-header {
+        margin-top: 2vh !important;
+    }
+}

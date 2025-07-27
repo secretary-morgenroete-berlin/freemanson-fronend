@@ -8,23 +8,28 @@ import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
+import Lodge from "./components/Lodge/Lodge";
 import WhatIsFreemasonry from './components/WhatIsFreemasonry/WhatIsFreemasonry';
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <main style={{ minHeight: "80vh" }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/what-is-freemasonry" element={<WhatIsFreemasonry />} />
-        </Routes>
-      </main>
-      <Footer />
-    </Router>
+    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      <Router>
+        <Navbar />
+        <main style={{ flex: 1 }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/lodge" element={<Lodge />} />
+            <Route path="/what-is-freemasonry" element={<WhatIsFreemasonry />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </div>
   );
 }
+
 
 export default App;

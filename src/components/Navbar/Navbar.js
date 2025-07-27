@@ -10,6 +10,7 @@ const Navbar = () => (
       <BsNavbar.Collapse id="basic-navbar-nav">
         <Nav className="ms-auto">
           <Nav.Link as={Link} to="/">Home</Nav.Link>
+          <Nav.Link as={Link} to="/lodge">lodge</Nav.Link>
           {/* FREEMASONS DROPDOWN */}
           <NavDropdown title="Freemasons" id="freemasons-dropdown">
             <NavDropdown.Item as={Link} to="/what-is-freemasonry">
