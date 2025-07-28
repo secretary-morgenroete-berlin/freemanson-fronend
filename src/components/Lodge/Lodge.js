@@ -3,9 +3,9 @@ import { Container, Row, Col, Card, Carousel, Button } from 'react-bootstrap';
 import './Lodge.css';
 
 const carouselImages = [
-  "/4.jpg",
-  "/2.jpg",
-  "/3.jpg"
+  "/4.JPG",
+  "/2.JPG",
+  "/3.JPG"
 ];
 
 const lodgeSections = [
