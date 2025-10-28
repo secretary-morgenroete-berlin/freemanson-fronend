@@ -21,7 +21,7 @@ export default function BecomeMember() {
     setSubmitted(false);
 
     try {
-      const res = await fetch(`${API_URL}/public/api/v0/contact-us`, {
+      const res = await fetch(`${API_URL}/public/api/contact-us`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
