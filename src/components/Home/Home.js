@@ -117,7 +117,7 @@ const Home = () => {
           <Button as={Link} to="/about" variant="primary" size="lg">
             Learn About the Lodge
           </Button>
-          <Button as={Link} to="/contact" variant="outline-dark" size="lg">
+          <Button as={Link} to="/become-member" variant="outline-dark" size="lg">
             Interested in Membership?
           </Button>
         </div>
@@ -158,7 +158,7 @@ const Home = () => {
                   Are you interested in joining Freemasonry? <br />
                   <strong>Contact us</strong> for more information about our regular meetings and the path to membership.
                 </Card.Text>
-                <Button as={Link} to="/contact" variant="primary" size="sm">
+                <Button as={Link} to="/become-member" variant="primary" size="sm">
                   Contact
                 </Button>
               </Card.Body>

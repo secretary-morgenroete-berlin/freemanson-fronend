@@ -7,8 +7,10 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
-import Contact from "./components/Contact/Contact";
+// import Contact from "./components/Contact/Contact";
 import Lodge from "./components/Lodge/Lodge";
+import NewsBlog from "./components/NewsBlog/NewsBlog";
+import BecomeMember from "./components/BecomeMember/BecomeMember";
 import WhatIsFreemasonry from './components/WhatIsFreemasonry/WhatIsFreemasonry';
 
 function App() {
@@ -20,8 +22,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
+            {/* <Route path="/contact" element={<Contact />} /> */}
             <Route path="/lodge" element={<Lodge />} />
+            <Route path="/news-blog" element={<NewsBlog />} />
+            <Route path="/become-member" element={<BecomeMember />} />
             <Route path="/what-is-freemasonry" element={<WhatIsFreemasonry />} />
           </Routes>
         </main>
