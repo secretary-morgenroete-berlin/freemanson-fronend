@@ -10,7 +10,7 @@ const blogPosts = [
     category: "Charity",
     summary:
       "Our lodge partnered with community organizations to deliver school supplies and books for underprivileged children.",
-    image: "/3.jpg",
+    image: "/3.JPG",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const blogPosts = [
     category: "Event",
     summary:
       "A look back at our inspiring annual gathering: brotherhood, rituals, and future plans.",
-    image: "/1.jpg",
+    image: "/1.JPG",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const blogPosts = [
     category: "Reflection",
     summary:
       "Discover how the ancient principles of Freemasonry remain relevant and empowering in today's world.",
-    image: "/2.jpg",
+    image: "/2.JPG",
   },
   // ...more posts as needed
 ];
