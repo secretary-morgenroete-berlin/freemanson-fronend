@@ -1,0 +1,22 @@
+.add-member {
+    display: contents;
+    color: #654321 !important;
+    cursor: pointer;
+}
+
+.member-btn {
+    margin: auto;
+}
+
+label {
+    color: black;
+}
+
+.back-member {
+    margin: auto;
+    width: fit-content;
+}
+
+.tab-content {
+    margin-bottom: 5vh;
+}

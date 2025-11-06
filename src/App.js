@@ -12,6 +12,8 @@ import Lodge from "./components/Lodge/Lodge";
 import NewsBlog from "./components/NewsBlog/NewsBlog";
 import BecomeMember from "./components/BecomeMember/BecomeMember";
 import WhatIsFreemasonry from './components/WhatIsFreemasonry/WhatIsFreemasonry';
+import Login from './components/Login/Login'
+import Portal from "./components/Portal/Portal";
 
 function App() {
   return (
@@ -22,11 +24,12 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            {/* <Route path="/contact" element={<Contact />} /> */}
+            <Route path="/login" element={<Login />} />
             <Route path="/lodge" element={<Lodge />} />
             <Route path="/news-blog" element={<NewsBlog />} />
             <Route path="/become-member" element={<BecomeMember />} />
             <Route path="/what-is-freemasonry" element={<WhatIsFreemasonry />} />
+            <Route path="/portal" element={<Portal />} />
           </Routes>
         </main>
         <Footer />

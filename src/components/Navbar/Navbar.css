@@ -1,0 +1,8 @@
+/* Hide dropdown caret for initials */
+#dropdown-user::after {
+  display: none !important;
+}
+
+#dropdown-btn {
+  /* display: contents; */
+}

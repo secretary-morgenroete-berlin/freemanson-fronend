@@ -1,0 +1,20 @@
+.create-folder, .upload {
+    display: contents;
+    color: #654321 !important;
+    cursor: pointer;
+}
+
+.folder-list, .file-list {
+    overflow-x: visible !important;
+}
+
+#back-btn {
+    display: block;
+    padding: 2vh !important;
+    width: auto;    
+}
+
+.modal-footer button {
+    width: auto;
+}
+

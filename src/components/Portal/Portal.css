@@ -1,0 +1,20 @@
+#portal-tabs li {
+    margin: auto  0.5vh;
+}
+
+/* Highlight active tab */
+#portal-tabs .nav-link.active {
+  background-color: rgba(255, 255, 240, 0.92) !important;
+  color: #654321 !important;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* Hover effect */
+#portal-tabs .nav-link:hover {
+  background-color:rgba(255, 255, 240, 0.92) !important;
+  border-radius: 8px;
+  color: #654321 !important;
+}
+
+
