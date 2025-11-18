@@ -1,15 +1,26 @@
 // src/components/Portal/Portal.js
-import React, { useState } from "react";
-import { Tabs, Tab, Container, Row, Col } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Tabs, Tab, Container } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import LectureTab from "./LectureTab";
 import MagazineTab from "./MagazineTab";
 import MembersTab from "./MembersTab";
-import './Portal.css'
+import NewsBlogsTab from "./NewsBlogsTab";
+import CalendarTab from "./CalendarTab";
+import "./Portal.css";
 
 const Portal = () => {
   const [key, setKey] = useState("lecture");
   const user = useSelector((state) => state.auth.user);
+  const navigate = useNavigate();
+
+  // Redirect to login if not logged in
+  useEffect(() => {
+    if (!user) {
+      navigate("/login");
+    }
+  }, [user, navigate]);
 
   return (
     <Container className="mt-4">
@@ -31,6 +42,14 @@ const Portal = () => {
 
         <Tab eventKey="members" title="Members">
           <MembersTab role={user?.role} />
+        </Tab>
+
+        <Tab eventKey="news" title="News & Blogs">
+          <NewsBlogsTab role={user?.role} />
+        </Tab>
+
+        <Tab eventKey="calendar" title="Calendar">
+          <CalendarTab role={user?.role} />
         </Tab>
       </Tabs>
     </Container>

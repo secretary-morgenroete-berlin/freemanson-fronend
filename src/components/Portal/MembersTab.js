@@ -99,7 +99,7 @@ const MembersTab = () => {
         <Table striped bordered hover responsive>
           <thead>
             <tr>
-              <th>Name</th>
+              <th>Name</th><th>Role</th>
             </tr>
           </thead>
           <tbody>
@@ -110,6 +110,7 @@ const MembersTab = () => {
                 onClick={() => setSelectedMember(m)}
               >
                 <td>{`${m.first_name} ${m.last_name}`}</td>
+                <td>{`${m.role}`}</td>
               </tr>
             ))}
           </tbody>
@@ -118,7 +119,7 @@ const MembersTab = () => {
 
       {/* Member Details */}
       {selectedMember && !showForm && (
-        <div className="card p-3 shadow-sm">
+        <div className="card p-3 shadow-sm member-details">
           <h5 className="mb-3">Member Details</h5>
           <p><strong>Name:</strong> {selectedMember.first_name} {selectedMember.last_name}</p>
           <p><strong>Email:</strong> {selectedMember.email}</p>

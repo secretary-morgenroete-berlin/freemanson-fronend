@@ -3,6 +3,14 @@
   min-height: 100vh;
 }
 
+.post-card-btn {
+    width: auto;
+}
+
+.newsblog-section {
+  padding-top: 2vh;
+}
+
 .newsblog-header .header-slidein {
   display: inline-block;
   transform: translateX(-60px);
@@ -39,7 +47,7 @@
 }
 .newsblog-featured-img {
   width: 100%;
-  height: 340px;
+  /* height: 340px; */
   object-fit: cover;
   object-position: center;
   filter: brightness(0.87);
@@ -99,10 +107,15 @@
   border-radius: 1.1rem 1.1rem 0 0;
   overflow: hidden;
 }
+
+.batch {
+  height: 0;
+}
+
 .newsblog-card-img-wrap .newsblog-badge {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
+  position: relative;
+  top: -7rem;
+  left: 0.5rem;
   z-index: 2;
   background: #ffeccb;
   color: #4c3b22;

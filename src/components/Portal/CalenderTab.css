@@ -1,0 +1,20 @@
+button {
+    width: auto !important;
+}
+
+.rbc-button-link, .rbc-toolbar button,.rbc-toolbar button:focus, .rbc-toolbar button:hover {
+    background-color: #eaf6ff !important;
+    color: black !important;
+}
+
+.rbc-toolbar button {
+    background-color: #eaf6ff !important;
+}
+
+.add-event, .add-event:hover, .add-event:focus {
+    background-color: #eaf6ff !important;
+    color: black !important;
+}
+.btn-close {
+    width: 1em !important;
+}

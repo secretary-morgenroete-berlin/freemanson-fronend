@@ -367,10 +367,10 @@ const LectureTab = ({ role }) => {
           {role === "admin" && (
             <div className="d-flex justify-content-end mb-3">
               <Form onSubmit={handleUpload} className="d-flex align-items-center gap-2">
-                <Form.Group controlId="formFile" className="mb-0 position-relative">
-                  <Form.Control type="file" accept="application/pdf" onChange={(e) => setFile(e.target.files[0])} style={{ width: "50vw" }} />
+                <Form.Group controlId="formFile" className="mb-0">
+                  <Form.Control type="file" accept="application/pdf" onChange={(e) => setFile(e.target.files[0])} />
                 </Form.Group>
-                <span onClick={handleUpload} className="upload" style={{ cursor: "pointer", textDecoration: "underline" }}>Upload</span>
+                <button onClick={handleUpload} className="upload" style={{ cursor: "pointer" }}>Upload</button>
               </Form>
             </div>
           )}

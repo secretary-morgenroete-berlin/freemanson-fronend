@@ -3,6 +3,10 @@
   display: none !important;
 }
 
-#dropdown-btn {
-  /* display: contents; */
+#dropdown-user {
+  width: 38px !important;
+}
+
+.dropdown-item:focus {
+  background-color: #654321;
 }

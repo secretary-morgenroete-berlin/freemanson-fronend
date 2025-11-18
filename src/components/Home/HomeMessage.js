@@ -77,22 +77,7 @@ const HomeMessage = () => {
         <Row className="justify-content-center">
           <Col md={10} lg={8}>
 
-            {/* Envelope flap (SVG triangle) */}
-            {/* <div style={{ width: "100%", height: 0, position: "relative", marginBottom: "-10px" }}>
-              <svg width="100%" height="54" viewBox="0 0 800 54" style={{ display: "block" }}>
-                <polygon points="0,0 800,0 400,54"
-                  style={{
-                    fill: "#e6dcc0",
-                    filter: "drop-shadow(0 7px 10px #cabfa580)",
-                    opacity: 0.96,
-                  }} />
-                <polygon points="0,0 800,0 400,46"
-                  style={{
-                    fill: "#f7f2dd",
-                    opacity: 0.5
-                  }} />
-              </svg>
-            </div> */}
+            
 
             <motion.div
               initial={{ opacity: 0, y: 70 }}

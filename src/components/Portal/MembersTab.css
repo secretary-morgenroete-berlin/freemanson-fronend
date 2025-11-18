@@ -20,3 +20,8 @@ label {
 .tab-content {
     margin-bottom: 5vh;
 }
+
+.member-details {
+    width: 80%;
+    margin: auto;
+}

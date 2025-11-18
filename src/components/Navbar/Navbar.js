@@ -99,6 +99,9 @@ const Navbar = () => {
                   <Dropdown.Item as={Link} to="/portal">
                     Portal
                   </Dropdown.Item>
+                  <Dropdown.Item as={Link} to="/pages">
+                    Manage Pages
+                  </Dropdown.Item>
                   <Dropdown.Item onClick={handleLogout}>
                     Logout
                   </Dropdown.Item>

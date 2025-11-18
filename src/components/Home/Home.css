@@ -1,3 +1,5 @@
+/* src/pages/Home.css */
+
 .homepage-hero {
   position: relative;
   overflow: hidden;
@@ -18,4 +20,9 @@
 
 #letter {
   border-radius: 2px !important;
+}
+
+/* small niceties */
+#letter .card-body {
+  background-clip: padding-box;
 }

@@ -14,6 +14,7 @@ import BecomeMember from "./components/BecomeMember/BecomeMember";
 import WhatIsFreemasonry from './components/WhatIsFreemasonry/WhatIsFreemasonry';
 import Login from './components/Login/Login'
 import Portal from "./components/Portal/Portal";
+import Pages from "./components/Pages/Pages";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/become-member" element={<BecomeMember />} />
             <Route path="/what-is-freemasonry" element={<WhatIsFreemasonry />} />
             <Route path="/portal" element={<Portal />} />
+            <Route path="/pages" element={<Pages />} />
           </Routes>
         </main>
         <Footer />

@@ -1,4 +1,4 @@
-.create-folder, .upload {
+.create-folder {
     display: contents;
     color: #654321 !important;
     cursor: pointer;
@@ -18,3 +18,7 @@
     width: auto;
 }
 
+.upload {
+    border-radius: 10px;
+    text-decoration: none;
+}
