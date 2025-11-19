@@ -32,6 +32,7 @@ function App() {
             <Route path="/what-is-freemasonry" element={<WhatIsFreemasonry />} />
             <Route path="/portal" element={<Portal />} />
             <Route path="/pages" element={<Pages />} />
+            <Route path="/news-blog/:id" element={<NewsBlog />} />
           </Routes>
         </main>
         <Footer />

@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Badge, Button, Spinner } from "react-bootstrap";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import "./NewsBlog.css";
 
 export default function NewsBlog() {
   const API_URL = process.env.REACT_APP_API_URL;
+
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [posts, setPosts] = useState([]);
   const [selectedPost, setSelectedPost] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // Fetch posts from API
+  // Fetch posts
   const fetchPosts = async () => {
     setLoading(true);
     try {
@@ -24,11 +30,23 @@ export default function NewsBlog() {
     setLoading(false);
   };
 
+  // Fetch posts whenever the list view is shown (route = '/news-blog')
   useEffect(() => {
-    fetchPosts();
-  }, []);
+    if (location.pathname === "/news-blog") {
+      setSelectedPost(null);
+      fetchPosts();
+    }
+  }, [location.pathname]);
 
-  // Animate cards on scroll into view
+  // Open detail when URL has id
+  useEffect(() => {
+    if (id && posts.length > 0) {
+      const post = posts.find((p) => p.id.toString() === id.toString());
+      setSelectedPost(post || null);
+    }
+  }, [id, posts]);
+
+  // Animate cards
   useEffect(() => {
     const cards = document.querySelectorAll(".newsblog-card");
     const onScroll = () => {
@@ -44,29 +62,59 @@ export default function NewsBlog() {
     return () => window.removeEventListener("scroll", onScroll);
   }, [posts]);
 
-  const handleReadMore = (post) => setSelectedPost(post);
+  // Read More → go to detail view
+  const handleReadMore = (post) => {
+    navigate(`/news-blog/${post.id}`);
+  };
 
-  // Updated: refetch posts when going back
+  // Back → go to list view
   const handleBack = () => {
     setSelectedPost(null);
-    fetchPosts(); // re-fetch the list
+    navigate("/news-blog");
+  };
+
+  // WhatsApp Share
+  const shareOnWhatsApp = (post) => {
+    const url = `${window.location.origin}/news-blog/${post.id}`;
+    const message = `${post.title}\n\nRead more here:\n${url}`;
+    window.open(`https://wa.me/?text=${encodeURIComponent(message)}`, "_blank");
+  };
+
+  // Facebook Share
+  const shareOnFacebook = (post) => {
+    const url = `${window.location.origin}/news-blog/${post.id}`;
+    window.open(
+      `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+      "_blank"
+    );
+  };
+
+  // LinkedIn Share
+  const shareOnLinkedIn = (post) => {
+    const url = `${window.location.origin}/news-blog/${post.id}`;
+    window.open(
+      `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
+      "_blank"
+    );
   };
 
   // -------------------------
-  // Detail View
+  // DETAIL VIEW
   // -------------------------
-  if (selectedPost) {
+  if (id && selectedPost) {
     return (
       <section className="newsblog-section pb-5">
         <Container>
           <Button variant="secondary" className="mb-4 post-card-btn" onClick={handleBack}>
             ← Back
           </Button>
+
           <div
             className="p-4 bg-white rounded shadow-sm"
             style={{ maxWidth: "900px", margin: "0 auto" }}
           >
             <h3 className="mb-3">{selectedPost.title}</h3>
+
             <div className="text-center">
               {selectedPost.image && (
                 <img
@@ -76,6 +124,7 @@ export default function NewsBlog() {
                 />
               )}
             </div>
+
             {selectedPost.tag && (
               <div className="mb-3 d-flex flex-wrap">
                 {selectedPost.tag.split(",").map((t, i) => (
@@ -85,7 +134,35 @@ export default function NewsBlog() {
                 ))}
               </div>
             )}
+
             <p style={{ whiteSpace: "pre-line" }}>{selectedPost.content}</p>
+
+            {/* SHARE BUTTONS */}
+            <div className="text-center mt-4">
+              <Button
+                variant="success"
+                className="px-4 me-2"
+                onClick={() => shareOnWhatsApp(selectedPost)}
+              >
+                WhatsApp
+              </Button>
+
+              <Button
+                variant="primary"
+                className="px-4 me-2"
+                onClick={() => shareOnFacebook(selectedPost)}
+              >
+                Facebook
+              </Button>
+
+              <Button
+                variant="info"
+                className="px-4"
+                onClick={() => shareOnLinkedIn(selectedPost)}
+              >
+                LinkedIn
+              </Button>
+            </div>
           </div>
         </Container>
       </section>
@@ -93,7 +170,7 @@ export default function NewsBlog() {
   }
 
   // -------------------------
-  // Main News & Blogs View
+  // MAIN LIST VIEW
   // -------------------------
   if (loading) {
     return (
@@ -115,10 +192,7 @@ export default function NewsBlog() {
     <section className="newsblog-section pb-5">
       <Container>
         <div className="text-center mb-5">
-          <h2
-            className="display-5 fw-bold newsblog-header"
-            style={{ color: "#735d34" }}
-          >
+          <h2 className="display-5 fw-bold newsblog-header" style={{ color: "#735d34" }}>
             <span className="header-slidein">News & Blog</span>
           </h2>
           <p
@@ -130,7 +204,6 @@ export default function NewsBlog() {
           </p>
         </div>
 
-        {/* All posts in card view */}
         <Row className="g-4">
           {posts.map((post) => (
             <Col xs={12} md={6} lg={4} key={post.id}>
@@ -144,35 +217,31 @@ export default function NewsBlog() {
                       className="card-img-hover"
                     />
                   )}
-                  {/* Tags displayed inline */}
+
                   {post.tag && (
                     <div className="d-flex flex-wrap batch">
-                      {post.tag
-                        .split(",")
-                        .map((t, i) => (
-                          <Badge
-                            bg="info"
-                            key={i}
-                            className="me-1 mb-1 newsblog-badge"
-                          >
-                            {t.trim()}
-                          </Badge>
-                        ))}
+                      {post.tag.split(",").map((t, i) => (
+                        <Badge bg="info" key={i} className="me-1 mb-1 newsblog-badge">
+                          {t.trim()}
+                        </Badge>
+                      ))}
                     </div>
                   )}
                 </div>
+
                 <Card.Body>
                   <Card.Title>{post.title}</Card.Title>
+
                   {post.date && (
-                    <Card.Subtitle className="mb-2 text-muted small">
-                      {post.date}
-                    </Card.Subtitle>
+                    <Card.Subtitle className="mb-2 text-muted small">{post.date}</Card.Subtitle>
                   )}
+
                   <Card.Text>
                     {post.content?.length > 100
                       ? post.content.slice(0, 100) + "..."
                       : post.content}
                   </Card.Text>
+
                   <div className="text-center mt-2">
                     <Button
                       variant="outline-primary"
