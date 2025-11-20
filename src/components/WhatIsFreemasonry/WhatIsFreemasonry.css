@@ -34,6 +34,9 @@
   box-shadow: 0 0 12px rgba(101,67,33,0.09);
 }
 
+.accordion-header button {
+  width: 100% !important;
+}
 @media (max-width: 600px) {
   .freimaurerei-title {
     font-size: 2rem;
